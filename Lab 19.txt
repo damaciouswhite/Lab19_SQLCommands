@@ -1,0 +1,38 @@
+select * from customers
+
+select distinct country from customers
+
+select * from customers where CustomerID like 'BI%'
+
+select top 100 * from orders
+
+select * from customers where PostalCode in ('1010', '3012', '12209', '05023')
+
+select * from customers order by country, city
+
+insert into Customers (CustomerID, CompanyName, City) values (5325, 'C Sharp', 'Detroit')
+
+update Orders set ShipRegion = 'EuroZone' where ShipCountry = 'france';
+
+delete from [Order Details] where Quantity = 1;
+
+select min(Quantity) as SmallestQuantity from [Order Details]
+
+select Max(Quantity) as LargestQuantity from [Order Details]
+
+select AVG(Quantity) from [Order Details]
+
+select min(Quantity) from [Order Details] group by OrderID; 
+
+select max(Quantity) from [Order Details] group by OrderID;
+
+select AVG(Quantity) from [Order Details] group by OrderID; 
+
+select * from Orders where OrderID like '10290'
+
+select orders.OrderID, Customers.CustomerID from Orders inner join Customers on Orders.CustomerID = customers.CustomerID;
+
+select * from Employees where ReportsTo = null;
+
+select * from Employees where ReportsTo = 'andrew';
+
